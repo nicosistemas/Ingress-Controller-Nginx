@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: ingress-monitoring
+ namespace: monitoring
+spec:
+ ingressClassName: nginx
+ #tls: 
+ #- hosts:
+ #  - sre-monitor-prometheus-dev.gruposancristobal.org.ar
+ #  - sre-monitor-alertmanager-dev.gruposancristobal.org.ar
+ #  - sre-monitor-dev.gruposancristobal.org.ar
+   #secretName: tls-secret-dev
+ rules:
+ - host: sre-monitor-prometheus-dev.gruposancristobal.org.ar
+   http:
+     paths:
+     - path: /
+       pathType: Prefix
+       backend:
+         service:
+           name: prometheusproxy
+           port:
+             number: 80
+ - host: sre-monitor-alertmanager-dev.gruposancristobal.org.ar
+   http:
+     paths:
+     - path: /
+       pathType: Prefix
+       backend:
+         service:
+           name: alertmanagerproxy
+           port:
+             number: 80
+ - host: sre-monitor-dev.gruposancristobal.org.ar
+   http:
+     paths:
+     - path: /
+       pathType: Prefix
+       backend:
+         service:
+           name: grafana
+           port:
+             number: 3000
