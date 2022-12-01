@@ -7,12 +7,12 @@ spec:
  ingressClassName: nginx
  #tls: 
  #- hosts:
- #  - sre-monitor-prometheus-dev.gruposancristobal.org.ar
- #  - sre-monitor-alertmanager-dev.gruposancristobal.org.ar
- #  - sre-monitor-dev.gruposancristobal.org.ar
+ #  - sre-monitor-prometheus-dev.grupo.org.ar
+ #  - sre-monitor-alertmanager-dev.grupo.org.ar
+ #  - sre-monitor-dev.grupo.org.ar
    #secretName: tls-secret-dev
  rules:
- - host: sre-monitor-prometheus-dev.gruposancristobal.org.ar
+ - host: sre-monitor-prometheus-dev.grupo.org.ar
    http:
      paths:
      - path: /
@@ -22,7 +22,7 @@ spec:
            name: prometheusproxy
            port:
              number: 80
- - host: sre-monitor-alertmanager-dev.gruposancristobal.org.ar
+ - host: sre-monitor-alertmanager-dev.grupo.org.ar
    http:
      paths:
      - path: /
@@ -32,7 +32,7 @@ spec:
            name: alertmanagerproxy
            port:
              number: 80
- - host: sre-monitor-dev.gruposancristobal.org.ar
+ - host: sre-monitor-dev.grupo.org.ar
    http:
      paths:
      - path: /
