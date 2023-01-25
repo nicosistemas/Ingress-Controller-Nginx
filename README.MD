@@ -11,7 +11,11 @@ Una vez deployado todo el stack "Ingress-Nginx" resta aplicar nuestro Ingress (i
 La forma que tiene el Ingress Controller Nginx de saber a que servicios (URLs) apuntar de nuestro ingress monitoring es mediante el ingressClassName: nginx
 
 ### fuentes:
+
 https://github.com/kubernetes/ingress-nginx/blob/main/deploy/static/provider/aws/nlb-with-tls-termination/deploy.yaml
+
 https://kubernetes.io/docs/concepts/services-networking/ingress/
+
 https://kubernetes.github.io/ingress-nginx/deploy/#network-load-balancer-nlb
+
 https://github.com/dolguin-/aws101-kubernetes/blob/main/clase-9/readme.md
